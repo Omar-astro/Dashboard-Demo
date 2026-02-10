@@ -1,0 +1,177 @@
+* {
+    margin: 0;                    
+    padding: 0;                   
+    box-sizing: border-box;       
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.header {
+    text-align: center; 
+    color: white; 
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.title {
+    font-size: 3.5rem; 
+    font-weight: 700;
+    margin-bottom: 15px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.2rem; 
+    font-weight: 300; 
+    opacity: 0.95; 
+    letter-spacing: 0.5px; 
+}
+
+.dashboards-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 40px; 
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.dashboard-card {
+    background: white; 
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+    position: relative;
+    width: 300px; 
+    display: flex; 
+}
+
+.card-link {
+    text-decoration: none; 
+    color: inherit;   
+    display: flex;   
+    flex-direction: column; 
+    width: 100%;    
+    height: 100%;    
+}
+
+.card-image {
+    width: 100%;  
+    height: 250px;  
+    object-fit: cover;  
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    padding: 25px;  
+    background: white;
+    flex-grow: 1;   
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center; 
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;  
+    margin-bottom: 8px; 
+    font-weight: 600;
+}
+
+.card-description {
+    font-size: 0.95rem; 
+    color: #777;  
+    font-weight: 400; 
+}
+
+.dashboard-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card:hover .card-image {
+    transform: scale(1.08); 
+}
+
+.footer {
+    text-align: center;
+    color: white; 
+    font-size: 0.95rem;  
+    opacity: 0.8;   
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 30px;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;              
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;              
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;              
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;             
+        transform: translateY(0); 
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;        
+    }
+    
+    .dashboards-container {
+        flex-direction: column;  
+        align-items: center;    
+        gap: 30px;              
+    }
+    
+    .container {
+        padding: 40px 15px;     
+        gap: 40px;              
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;      
+    }
+    
+    .dashboard-card {
+        width: 100%;              
+        max-width: 100%;         
+    }
+    
+    .card-content {
+        padding: 20px;        
+    }
+}
